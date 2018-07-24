@@ -1,0 +1,19 @@
+﻿@using SCSDataBase.Models
+@model List<SCSDataBase.Models.DataBase>
+
+@{
+    ViewBag.Title = "Data Base";
+}
+
+<h2>DataBase</h2>
+<ul>
+    @foreach (var item in Model)
+    {<li>
+     <a href="http://@item.URL">@item.URL</a> 
+         @item.description
+         @item.category
+
+     </li>
+    }
+    <form action="AddInfo"><button type="submit" class="btn btn-default">Add Somthing to the DataBase</button></form>
+</ul>

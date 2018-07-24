@@ -1,0 +1,33 @@
+﻿@model List<SCSDataBase.Models.DataBase>
+@{
+    ViewBag.Title = "AdminPage";
+}
+
+<h2>AdminPage</h2>
+
+@Html.BeginForm("Approve", "DataBase")
+{
+  @foreach (var data in Model)
+  {
+    <div class="form-group">
+        @Html.LabelFor(m=>data.URL)
+        @Html.TextBoxFor(m => data.URL, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => data.URL)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => data.category)
+        @Html.TextBoxFor(m => data.category, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => data.category)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => data.description)
+        @Html.TextBoxFor(m => data.description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => data.description)
+    </div>
+
+      <button type="submit" class="btn btn-default">accept</button>
+     
+  }
+}

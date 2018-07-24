@@ -1,0 +1,32 @@
+﻿@using SCSDataBase.Models
+@model SCSDataBase.Models.DataBase
+@{
+    ViewBag.Title = "AddInfo";
+}
+
+<h2>Add A new Link!</h2>
+<!-- this form will accept a new link requested by a user-->
+@using (Html.BeginForm("Save", "DataBase"))
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.URL)
+    @Html.TextBoxFor(m => m.URL, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.URL)
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.category)
+    @Html.TextBoxFor(m => m.category, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.category)
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.description)
+    @Html.TextBoxFor(m => m.description, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.description)
+</div>
+
+<button type="submit" class="btn btn-default">Submit</button>
+
+}
+

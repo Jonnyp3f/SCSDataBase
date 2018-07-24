@@ -1,0 +1,13 @@
+﻿@model SCSDataBase.Models.User
+@using SCSDataBase.Models
+@{
+    ViewBag.Title = "userPage";
+}
+
+<h2>userPage</h2>
+<ul>
+    <li>@Model.Name</li>
+    <li>@Model.email</li>
+    <li>@Model.NumberOfContributions</li>
+</ul>
+<form action="/database/index"> <button type="submit" class="btn btn-default">Submit</button> Go to the DataBase</form>
